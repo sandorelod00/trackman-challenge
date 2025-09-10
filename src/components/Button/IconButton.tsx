@@ -12,7 +12,7 @@ const IconButton: FC<IconButtonProps> = ({ children, className = '', ...props })
             className={`
                 w-[32px]
                 h-[32px]
-                rounded-full
+                rounded
                 p-[8px]    /* padding: Space/200 */
                 flex
                 items-center
@@ -21,6 +21,7 @@ const IconButton: FC<IconButtonProps> = ({ children, className = '', ...props })
                 transition
                 duration-200
                 focus:outline-none
+                hover:cursor-pointer
                 ${className}
             `}
         >

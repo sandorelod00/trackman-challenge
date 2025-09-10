@@ -6,13 +6,14 @@ import Button from './components/Button/Button';
 import IconButton from './components/Button/IconButton';
 import IconDelete from './components/Icons/IconDelete';
 import IconStar from './components/Icons/IconStar';
+import FacilityCard from './components/FacilityCard/FacilityCard';
 
 function App() {
     const [test, setTest] = useState('');
     const [textAreaTest, setTextAreaTest] = useState('');
 
     return (
-        <div>
+        <div className="w-[800px] flex flex-col items-center bg-gray-100 gap-4 p-4">
             <h1 className="text-3xl font-bold underline">Hello world!</h1>
             <Input
                 label="Label"
@@ -43,6 +44,8 @@ function App() {
             <IconButton onClick={() => alert('Icon Button Clicked!')}>
                 <IconStar />
             </IconButton>
+            <br />
+            <FacilityCard />
         </div>
     );
 }

@@ -15,8 +15,8 @@ const Button: FC<ButtonProps> = ({ label, variant = 'primary', className = '', .
         justify-center
         gap-[10px]
         opacity-100
-        px-[24px]
-        py-[8px]
+        px-1
+        py-2
         transition
         duration-200
         focus:outline-none
