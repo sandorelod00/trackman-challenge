@@ -24,7 +24,7 @@ export default tseslint.config([
       prettier,
     },
     rules: {
-      'prettier/prettier': 'warn',
+      'prettier/prettier': ['warn', {"usePrettierrc": "true"}],
     }
   },
 ])
