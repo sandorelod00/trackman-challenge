@@ -1,11 +1,13 @@
 type IconlyIconProps = {
     size?: number;
     color?: string;
+    className?: string;
 };
 
-const IconStar = ({ size = 32, color = '#000000' }: IconlyIconProps) => {
+const IconStar = ({ size = 32, color = '#000000', className = '' }: IconlyIconProps) => {
     return (
         <svg
+            className={className}
             width={size}
             height={size}
             viewBox="0 0 25 24"
