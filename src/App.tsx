@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Input from './components/Input/Input';
 import TextArea from './components/TextArea/TextArea';
+import Checkbox from './components/Checkbox/Checkbox';
 
 function App() {
     const [test, setTest] = useState('');
@@ -24,6 +25,8 @@ function App() {
                 onChange={(e) => setTextAreaTest(e.target.value)}
                 required
             />
+            <br />
+            <Checkbox label="Default Facility" description="Default Facility" />
         </div>
     );
 }
