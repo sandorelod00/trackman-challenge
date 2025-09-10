@@ -1,11 +1,11 @@
 import type { FC } from 'react';
-import IconStar from '../Icons/IconStar';
-import mockImage from '../../../public/mock.jpg';
-import Label from '../Label/Label';
-import IconLocation from '../Icons/IconLocation';
+import Button from '../Button/Button';
 import IconButton from '../Button/IconButton';
 import IconDelete from '../Icons/IconDelete';
-import Button from '../Button/Button';
+import IconLocation from '../Icons/IconLocation';
+import IconStar from '../Icons/IconStar';
+import Label from '../Label/Label';
+import mockImage from '../../../../public/mock.jpg';
 
 type Facility = {
     name: string;
