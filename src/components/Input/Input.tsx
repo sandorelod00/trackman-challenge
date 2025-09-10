@@ -1,12 +1,12 @@
-import { type FC, type InputHTMLAttributes } from "react"
+import { type FC, type InputHTMLAttributes } from 'react';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-    label: string
-    required?: boolean
-    className?: string
+    label: string;
+    required?: boolean;
+    className?: string;
 }
 
-const Input: FC<InputProps> = ({ label, required = false, className = "", ...props }) => {
+const Input: FC<InputProps> = ({ label, required = false, className = '', ...props }) => {
     return (
         <div className={`w-[384px] h-[50px] flex flex-col ${className}`}>
             <label>
@@ -26,7 +26,7 @@ const Input: FC<InputProps> = ({ label, required = false, className = "", ...pro
         `}
             />
         </div>
-    )
-}
+    );
+};
 
-export default Input
+export default Input;
