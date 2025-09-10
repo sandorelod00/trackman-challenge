@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import Input from './components/Input/Input';
-import TextArea from './components/TextArea/TextArea';
-import Checkbox from './components/Checkbox/Checkbox';
-import Button from './components/Button/Button';
-import IconButton from './components/Button/IconButton';
-import IconDelete from './components/Icons/IconDelete';
-import IconStar from './components/Icons/IconStar';
-import FacilityCard from './components/FacilityCard/FacilityCard';
+import Input from './components/core/Input/Input';
+import TextArea from './components/core/TextArea/TextArea';
+import Checkbox from './components/core/Checkbox/Checkbox';
+import Button from './components/core/Button/Button';
+import IconButton from './components/core/Button/IconButton';
+import IconDelete from './components/core/Icons/IconDelete';
+import IconStar from './components/core/Icons/IconStar';
+import FacilityCard from './components/core/FacilityCard/FacilityCard';
 
 function App() {
     const [test, setTest] = useState('');
