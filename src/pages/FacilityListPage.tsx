@@ -1,11 +1,11 @@
-import Button from "../components/core/Button/Button";
-import FacilityCard from "../components/core/FacilityCard/FacilityCard";
+import Button from '../components/core/Button/Button';
+import FacilityCard from '../components/core/FacilityCard/FacilityCard';
 
 const FacilityListPage = () => {
     return (
         <div className="flex flex-col">
             <div className="flex justify-end">
-                <Button label={"Create Facility"} />
+                <Button label={'Create Facility'} />
             </div>
             <div className="flex grid grid-cols-3 gap-4 mt-1">
                 <FacilityCard />
