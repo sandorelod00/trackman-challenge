@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import FacilityCard from '../components/core/FacilityCard/FacilityCard';
-import NavLinkButton from '../components/core/Navigation/NavLinkButton';
-import type { Facility } from '../types/Facility';
-import DeleteFacilityDialog from '../components/DeleteFacilityDialog';
+import { useState } from "react";
+import NavLinkButton from "../components/core/Navigation/NavLinkButton";
+import DeleteFacilityDialog from "../components/pages/FacilityListPage/DeleteFacilityDialog";
+import FacilityCard from "../components/pages/FacilityListPage/FacilityCard/FacilityCard";
+import type { Facility } from "../types/Facility";
+
 
 const mockFacilityData: Facility = {
     id: '1',

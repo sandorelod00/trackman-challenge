@@ -1,18 +1,19 @@
-import type { FC } from 'react';
-import Button from '../Button/Button';
-import IconButton from '../Button/IconButton';
-import IconDelete from '../Icons/IconDelete';
-import IconLocation from '../Icons/IconLocation';
-import IconStar from '../Icons/IconStar';
-import Label from '../Label/Label';
+import type { FC } from "react";
+import type { Facility } from "../../../../types/Facility";
+import Button from "../../../core/Button/Button";
+import IconButton from "../../../core/Button/IconButton";
+import IconDelete from "../../../core/Icons/IconDelete";
+import IconLocation from "../../../core/Icons/IconLocation";
+import IconStar from "../../../core/Icons/IconStar";
+import Label from "../../../core/Label/Label";
 import mockImage from '/mock.jpg';
-import type { Facility } from '../../../types/Facility';
+
 
 type FacilityCardProp = Omit<Facility, 'description' | 'id'>;
 
 interface CardProps {
     facility: FacilityCardProp;
-    onDeleteClick?: (id: string) => void;
+    onDeleteClick: () => void;
     className?: string;
 }
 

@@ -1,7 +1,8 @@
-import Button from '../core/Button/Button';
-import Checkbox from '../core/Checkbox/Checkbox';
-import Input from '../core/Input/Input';
-import TextArea from '../core/TextArea/TextArea';
+import Button from "../../core/Button/Button";
+import Checkbox from "../../core/Checkbox/Checkbox";
+import Input from "../../core/Input/Input";
+import TextArea from "../../core/TextArea/TextArea";
+
 
 const FacilityForm = () => {
     return (

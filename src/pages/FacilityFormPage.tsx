@@ -1,4 +1,5 @@
-import FacilityForm from '../components/facilityForm/FaclilityForm';
+import FacilityForm from "../components/pages/FacilityFormPage/FaclilityForm";
+
 
 const FacilityFormPage = () => {
     return (
