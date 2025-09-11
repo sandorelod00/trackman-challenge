@@ -8,6 +8,7 @@ import IconDelete from './components/core/Icons/IconDelete';
 import IconStar from './components/core/Icons/IconStar';
 import FacilityCard from './components/core/FacilityCard/FacilityCard';
 import { Outlet } from 'react-router-dom';
+import NavBar from './components/navigation/NavBar';
 
 function App() {
     const [test, setTest] = useState('');
@@ -15,6 +16,7 @@ function App() {
 
     return (
         <>
+            <NavBar />
             <main>
                 <Outlet />
             </main>

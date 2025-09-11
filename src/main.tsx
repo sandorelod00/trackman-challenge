@@ -1,25 +1,21 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from './App';
 import './index.css';
 import FacilityFormPage from './pages/FacilityFormPage';
 import FacilityListPage from './pages/FacilityListPage';
 
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <App />,
-        children: [
-            { path: '/', element: <FacilityListPage /> },
-            { path: '/create', element: <FacilityFormPage /> },
-            { path: '/edit/:id', element: <FacilityFormPage /> },
-        ],
-    },
-]);
-
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <RouterProvider router={router} />
+        <BrowserRouter>
+            <Routes>
+                <Route path="/*" element={<App />}>
+                    <Route index element={<FacilityListPage />} />
+                    <Route path="create" element={<FacilityFormPage />} />
+                    <Route path="edit/:id" element={<FacilityFormPage />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
     </StrictMode>
 );
