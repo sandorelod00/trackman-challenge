@@ -5,7 +5,7 @@ import IconDelete from '../Icons/IconDelete';
 import IconLocation from '../Icons/IconLocation';
 import IconStar from '../Icons/IconStar';
 import Label from '../Label/Label';
-import mockImage from '../../../../public/mock.jpg';
+import mockImage from '/mock.jpg';
 
 type Facility = {
     name: string;
