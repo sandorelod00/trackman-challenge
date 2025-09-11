@@ -6,34 +6,17 @@ import IconLocation from '../Icons/IconLocation';
 import IconStar from '../Icons/IconStar';
 import Label from '../Label/Label';
 import mockImage from '/mock.jpg';
+import type { Facility } from '../../../types/Facility';
 
-type Facility = {
-    name: string;
-    address: string;
-    isOpen: boolean;
-    description: string;
-    imageUrl: string;
-    defaultFacility: boolean;
-    openingHours: string;
-    closingHours: string;
-};
+type FacilityCardProp = Omit<Facility, 'description' | 'id'>;
 
 interface CardProps {
+    facility: FacilityCardProp;
+    onDeleteClick?: (id: string) => void;
     className?: string;
 }
 
-const FacilityCard: FC<CardProps> = ({ className = '' }) => {
-    const testFacility: Facility = {
-        name: 'Test Facility',
-        address: '123 Test St, Test City',
-        isOpen: false,
-        description: 'This is a test facility used for demonstration purposes.',
-        imageUrl: mockImage,
-        defaultFacility: true,
-        openingHours: '08:00',
-        closingHours: '20:00',
-    };
-
+const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }) => {
     return (
         <div
             className={`
@@ -61,23 +44,20 @@ const FacilityCard: FC<CardProps> = ({ className = '' }) => {
             </div>
             <div className="flex flex-col gap-1">
                 <div className="flex justify-between items-center">
-                    <h5>{testFacility.name}</h5>
+                    <h5>{facility.name}</h5>
                     <Label
-                        text={testFacility.isOpen ? 'Open' : 'Closed'}
-                        type={testFacility.isOpen ? 'success' : 'error'}
+                        text={facility.isOpen ? 'Open' : 'Closed'}
+                        type={facility.isOpen ? 'success' : 'error'}
                         className="ml-2"
                     />
                 </div>
                 <div className="flex items-center">
                     <div className="flex text-gray-500 items-center gap-1">
                         <IconLocation />
-                        {testFacility.address}
+                        {facility.address}
                     </div>
                     <div className="flex ml-auto gap-2 items-center">
-                        <IconButton
-                            className="bg-gray-200"
-                            onClick={() => alert('Icon Button Clicked!')}
-                        >
+                        <IconButton className="bg-gray-200" onClick={onDeleteClick}>
                             <IconDelete />
                         </IconButton>
                         <Button
