@@ -16,11 +16,13 @@ const navigationLinks: NavigationLinks[] = [
 
 const NavBar = () => {
     return (
-        <nav className="w-full bg-[#2C2C2C] h-[54px] flex items-center px-8 ">
-            <img src={Logo} className="h-[16px] w-[151px]"></img>
-            {navigationLinks.map((link, index) => (
-                <MenuItem key={`MenuItem-${index}`} to={link.to} label={link.label} />
-            ))}
+        <nav className="w-full bg-[#2C2C2C] h-[54px] mb-6">
+            <div className="max-w-[1200px] mx-auto h-full flex items-center gap-6 px-4">
+                <img src={Logo} className="h-[16px] w-[151px]"></img>
+                {navigationLinks.map((link, index) => (
+                    <MenuItem key={`MenuItem-${index}`} to={link.to} label={link.label} />
+                ))}
+            </div>
         </nav>
     );
 };

@@ -37,7 +37,7 @@ const FacilityCard: FC<CardProps> = ({ className = '' }) => {
     return (
         <div
             className={`
-                w-[348px]
+                w-[381px]
                 min-w-[348px]
                 h-[272.727px]
                 rounded-[16px]
