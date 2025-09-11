@@ -6,13 +6,7 @@ interface DialogProps extends React.HTMLAttributes<HTMLDivElement> {
     children?: ReactNode;
 }
 
-const Dialog: FC<DialogProps> = ({
-    isOpen,
-    onClose,
-    children,
-    className = '',
-    ...props
-}) => {
+const Dialog: FC<DialogProps> = ({ isOpen, onClose, children, className = '', ...props }) => {
     const dialogRef = useRef<HTMLDialogElement>(null);
 
     useEffect(() => {

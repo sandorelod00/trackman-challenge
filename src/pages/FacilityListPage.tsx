@@ -2,8 +2,6 @@ import { useState } from 'react';
 import FacilityCard from '../components/core/FacilityCard/FacilityCard';
 import NavLinkButton from '../components/core/Navigation/NavLinkButton';
 import type { Facility } from '../types/Facility';
-import Dialog from '../components/core/dialog/Dialog';
-import Button from '../components/core/Button/Button';
 import DeleteFacilityDialog from '../components/DeleteFacilityDialog';
 
 const mockFacilityData: Facility = {
@@ -68,12 +66,12 @@ const FacilityListPage = () => {
                     ))}
                 </div>
             </div>
-            
-            <DeleteFacilityDialog 
+
+            <DeleteFacilityDialog
                 isOpen={isDialogOpen}
                 closeDialog={closeDialog}
                 confirmDelete={confirmDelete}
-                facilityName={facilityToDelete?.name || ""}
+                facilityName={facilityToDelete?.name || ''}
             />
         </>
     );

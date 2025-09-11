@@ -1,13 +1,13 @@
-import { type FC } from "react"
-import Button from "./core/Button/Button"
-import Dialog from "./core/dialog/Dialog"
-import IconButton from "./core/Button/IconButton"
+import { type FC } from 'react';
+import Button from './core/Button/Button';
+import Dialog from './core/dialog/Dialog';
+import IconButton from './core/Button/IconButton';
 
 interface DeleteFacilityDialogProps {
-    facilityName: string
-    isOpen: boolean
-    closeDialog: () => void
-    confirmDelete: () => void
+    facilityName: string;
+    isOpen: boolean;
+    closeDialog: () => void;
+    confirmDelete: () => void;
 }
 
 const DeleteFacilityDialog: FC<DeleteFacilityDialogProps> = ({
@@ -16,7 +16,6 @@ const DeleteFacilityDialog: FC<DeleteFacilityDialogProps> = ({
     closeDialog,
     confirmDelete,
 }) => {
-
     return (
         <Dialog
             isOpen={isOpen}
@@ -27,12 +26,15 @@ const DeleteFacilityDialog: FC<DeleteFacilityDialogProps> = ({
             <div className="">
                 <div className="flex justify-between items-center p-2">
                     <p>Delete Facility</p>
-                    <IconButton className="bg-[#F5F5F5]" onClick={closeDialog}>X</IconButton>
+                    <IconButton className="bg-[#F5F5F5]" onClick={closeDialog}>
+                        X
+                    </IconButton>
                 </div>
                 <div className="border-y-1 border-[#D9D9D9]">
                     <div className="p-2">
                         <p>
-                            Are you sure you want to delete this facility? This action cannot be undone.
+                            Are you sure you want to delete this facility? This action cannot be
+                            undone.
                         </p>
                         <p>
                             Facility: <b>{facilityName}</b>
@@ -45,7 +47,7 @@ const DeleteFacilityDialog: FC<DeleteFacilityDialogProps> = ({
                 </div>
             </div>
         </Dialog>
-    )
-}
+    );
+};
 
-export default DeleteFacilityDialog
+export default DeleteFacilityDialog;
