@@ -2,7 +2,6 @@ export interface Facility {
     id: string;
     name: string;
     address: string;
-    isOpen: boolean;
     description: string;
     imageUrl: string;
     defaultFacility: boolean;

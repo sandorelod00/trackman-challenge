@@ -7,6 +7,7 @@ import IconStar from '../../../core/Icons/IconStar';
 import Label from '../../../core/Label/Label';
 import mockImage from '/mock.jpg';
 import NavLinkButton from '../../../core/Navigation/NavLinkButton';
+import { calculateIsOpen } from '../../../../utlis/calculateIsOpen';
 
 type FacilityCardProp = Omit<Facility, 'description'>;
 
@@ -17,6 +18,9 @@ interface CardProps {
 }
 
 const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }) => {
+
+    const isOpen = calculateIsOpen(facility.openingHours, facility.closingHours);
+
     return (
         <div
             className={`
@@ -36,11 +40,14 @@ const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }
                 ${className}
             `}
         >
-            <div className="relative w-full h-[160px] rounded-[12px] overflow-hidden">
+            <div className="relative w-full aspect-[324/176] rounded-[12px] overflow-hidden">
                 <img src={mockImage} alt="Card image" className="w-full h-full object-cover" />
                 {facility.defaultFacility && (
                     <div className="absolute top-[8px] left-[8px]">
-                        <IconStar className="bg-yellow-300 opacity-80 rounded-full" />
+                        <IconStar
+                            className="bg-[#975102] bg-opacity-50 rounded-full p-1"
+                            color="#FFFFFF"
+                        />
                     </div>
                 )}
             </div>
@@ -48,21 +55,19 @@ const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }
                 <div className="flex justify-between items-center">
                     <h5>{facility.name}</h5>
                     <Label
-                        text={facility.isOpen ? 'Open' : 'Closed'}
-                        type={facility.isOpen ? 'success' : 'error'}
+                        text={isOpen ? 'Open' : 'Closed'}
+                        type={isOpen ? 'success' : 'error'}
                         className="ml-2"
                     />
                 </div>
-                {facility.id}
-                {facility.defaultFacility}
                 <div className="flex items-center">
-                    <div className="flex text-gray-500 items-center gap-1">
+                    <div className="flex text-gray-500 items-center truncate max-w-[220px]">
                         <IconLocation />
-                        {facility.address}
+                        <p className='truncate'>{facility.address}</p>
                     </div>
                     <div className="flex ml-auto gap-2 items-center">
                         <IconButton className="bg-gray-200" onClick={onDeleteClick}>
-                            <IconDelete />
+                            <IconDelete size={16}/>
                         </IconButton>
                         <NavLinkButton
                             label="Edit"
