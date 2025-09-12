@@ -24,7 +24,7 @@ const Checkbox: FC<CheckboxProps> = ({ label, description, className = '', ...pr
                         w-5 h-5
                         rounded
                         border border-gray-400
-                        accent-orange-500
+                        accent-primary
                         "
                     // TODO: Using the accent color with Tailwind doesn't work correctly because the checkmark can't be styled as expected. Using plain CSS works as a workaround.
                 />

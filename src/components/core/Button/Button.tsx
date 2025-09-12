@@ -1,37 +1,36 @@
-import { type FC, type ButtonHTMLAttributes } from 'react';
+import { type FC, type ButtonHTMLAttributes } from "react"
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    label: string;
-    variant?: 'primary' | 'secondary';
-    className?: string;
+    label: string
+    variant?: "primary" | "secondary"
+    className?: string
 }
 
-const Button: FC<ButtonProps> = ({ label, variant = 'primary', className = '', ...props }) => {
+const Button: FC<ButtonProps> = ({ label, variant = "primary", className = "", ...props }) => {
     const baseClasses = `
-        rounded-md
-        font-semibold
-        flex
-        items-center
-        justify-center
-        gap-[10px]
-        opacity-100
-        px-1
-        py-2
-        transition
-        duration-200
-        focus:outline-none
-    `;
+    h-[32px]
+    rounded-md
+    font-semibold
+    flex
+    items-center
+    justify-center
+    opacity-100
+    transition
+    duration-200
+    focus:outline-none
+    px-4 
+  `
 
     const variantClasses =
-        variant === 'primary'
-            ? 'bg-orange-500 text-white hover:bg-orange-700'
-            : 'bg-gray-200 text-gray-800 hover:bg-gray-300';
+        variant === "primary"
+            ? "bg-primary text-white hover:bg-orange-700"
+            : "bg-secondary text-gray-800 hover:bg-gray-300"
 
     return (
         <button {...props} className={`${baseClasses} ${variantClasses} ${className}`}>
             {label}
         </button>
-    );
-};
+    )
+}
 
-export default Button;
+export default Button
