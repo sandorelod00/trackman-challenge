@@ -107,7 +107,7 @@ const FacilityForm: FC<FacilityFormProps> = ({ initialFacility, isEditMode }) =>
             <div className="flex justify-end gap-2 mt-4">
                 <NavLinkButton label="Cancel" variant="secondary" type="button" to={'/'} />
                 <Button
-                    label={isEditMode ? 'Create Facility' : 'Update Facility'}
+                    label={!isEditMode ? 'Create Facility' : 'Update Facility'}
                     variant="primary"
                     type="submit"
                 />
