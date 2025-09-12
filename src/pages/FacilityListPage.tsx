@@ -3,7 +3,7 @@ import NavLinkButton from '../components/core/Navigation/NavLinkButton';
 import DeleteFacilityDialog from '../components/pages/FacilityListPage/DeleteFacilityDialog';
 import FacilityCard from '../components/pages/FacilityListPage/FacilityCard/FacilityCard';
 import type { Facility } from '../types/Facility';
-import { useFacilityContext } from '../context/FacilityContext';
+import { useFacilityContext } from '../context/useFacilities';
 
 const FacilityListPage = () => {
     const { facilities, deleteFacility } = useFacilityContext();

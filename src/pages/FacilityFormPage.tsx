@@ -2,7 +2,7 @@ import FacilityForm from '../components/pages/FacilityFormPage/FaclilityForm';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import type { Facility } from '../types/Facility';
-import { useFacilityContext } from '../context/FacilityContext';
+import { useFacilityContext } from '../context/useFacilities';
 
 const FacilityFormPage = () => {
     const { id } = useParams();

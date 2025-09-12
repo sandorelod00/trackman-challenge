@@ -1,18 +1,9 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Facility } from '../types/Facility';
 import { v4 as uuidv4 } from 'uuid';
+import { FacilitiesContext } from './useFacilities';
 
 const STORAGE_KEY = 'facilities';
-
-interface FacilitiesContextType {
-    facilities: Facility[];
-    addFacility: (facility: Omit<Facility, 'id'>) => void;
-    updateFacility: (facility: Facility) => void;
-    deleteFacility: (id: string) => void;
-    getFacilityById: (id: string) => Facility | undefined;
-}
-
-const FacilitiesContext = createContext<FacilitiesContextType | undefined>(undefined);
 
 export const FacilitiesContextProvider: React.FC<{ children: React.ReactNode }> = ({
     children,
@@ -94,9 +85,4 @@ export const FacilitiesContextProvider: React.FC<{ children: React.ReactNode }> 
             {children}
         </FacilitiesContext.Provider>
     );
-};
-export const useFacilityContext = () => {
-    const context = useContext(FacilitiesContext);
-    if (!context) throw new Error('useFacilities must be used within FacilitiesProvider');
-    return context;
 };

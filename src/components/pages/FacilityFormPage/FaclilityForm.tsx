@@ -5,9 +5,9 @@ import Checkbox from '../../core/Checkbox/Checkbox';
 import Input from '../../core/Input/Input';
 import TextArea from '../../core/TextArea/TextArea';
 import type { Facility } from '../../../types/Facility';
-import { useFacilityContext } from '../../../context/FacilityContext';
 import { useNavigate } from 'react-router-dom';
 import NavLinkButton from '../../core/Navigation/NavLinkButton';
+import { useFacilityContext } from '../../../context/useFacilities';
 
 interface FacilityFormProps {
     initialFacility?: FacilityFormInputs;
