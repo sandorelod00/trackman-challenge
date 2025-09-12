@@ -4,10 +4,11 @@ import { NavLink, type NavLinkProps } from 'react-router-dom';
 interface NavLinkButtonProps extends NavLinkProps {
     to: string;
     label: string;
+    variant: string;
     className?: string;
 }
 
-const NavLinkButton: FC<NavLinkButtonProps> = ({ to, label, className = '', ...props }) => {
+const NavLinkButton: FC<NavLinkButtonProps> = ({ to, label, variant, className = '', ...props }) => {
     const baseClasses = `
     rounded-md
     font-semibold
@@ -21,13 +22,15 @@ const NavLinkButton: FC<NavLinkButtonProps> = ({ to, label, className = '', ...p
     transition
     duration-200
     focus:outline-none
-    bg-orange-500
-    text-white
-    hover:bg-orange-700"
   `;
 
+  const variantClasses =
+        variant === 'primary'
+            ? 'bg-orange-500 text-white hover:bg-orange-700'
+            : 'bg-gray-200 text-gray-800 hover:bg-gray-300';
+
     return (
-        <NavLink to={to} {...props} className={`${baseClasses} ${className}`}>
+        <NavLink to={to} {...props} className={`${baseClasses} ${variantClasses} ${className}`}>
             {label}
         </NavLink>
     );
