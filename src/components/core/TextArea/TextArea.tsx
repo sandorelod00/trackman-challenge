@@ -7,7 +7,13 @@ interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     className?: string;
 }
 
-const TextArea: FC<TextareaProps> = ({ label, required = true, error, className = '', ...props }) => {
+const TextArea: FC<TextareaProps> = ({
+    label,
+    required = true,
+    error,
+    className = '',
+    ...props
+}) => {
     return (
         <div className={`w-[384px] max-w-[384px] h-[121px] flex flex-col gap-2 ${className} mb-8`}>
             <label>
@@ -29,7 +35,7 @@ const TextArea: FC<TextareaProps> = ({ label, required = true, error, className 
           m-0
         `}
             />
-        {error && <span className="text-red-500 text-sm">{error}</span>}
+            {error && <span className="text-red-500 text-sm">{error}</span>}
         </div>
     );
 };

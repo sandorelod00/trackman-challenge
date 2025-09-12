@@ -1,13 +1,12 @@
-import type { FC } from "react";
-import type { Facility } from "../../../../types/Facility";
-import IconButton from "../../../core/Button/IconButton";
-import IconDelete from "../../../core/Icons/IconDelete";
-import IconLocation from "../../../core/Icons/IconLocation";
-import IconStar from "../../../core/Icons/IconStar";
-import Label from "../../../core/Label/Label";
+import type { FC } from 'react';
+import type { Facility } from '../../../../types/Facility';
+import IconButton from '../../../core/Button/IconButton';
+import IconDelete from '../../../core/Icons/IconDelete';
+import IconLocation from '../../../core/Icons/IconLocation';
+import IconStar from '../../../core/Icons/IconStar';
+import Label from '../../../core/Label/Label';
 import mockImage from '/mock.jpg';
-import NavLinkButton from "../../../core/Navigation/NavLinkButton";
-
+import NavLinkButton from '../../../core/Navigation/NavLinkButton';
 
 type FacilityCardProp = Omit<Facility, 'description'>;
 
@@ -39,11 +38,11 @@ const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }
         >
             <div className="relative w-full h-[160px] rounded-[12px] overflow-hidden">
                 <img src={mockImage} alt="Card image" className="w-full h-full object-cover" />
-                 {facility.defaultFacility && 
+                {facility.defaultFacility && (
                     <div className="absolute top-[8px] left-[8px]">
                         <IconStar className="bg-yellow-300 opacity-80 rounded-full" />
                     </div>
-                 }
+                )}
             </div>
             <div className="flex flex-col gap-1">
                 <div className="flex justify-between items-center">

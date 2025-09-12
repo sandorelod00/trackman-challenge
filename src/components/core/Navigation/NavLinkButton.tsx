@@ -8,7 +8,13 @@ interface NavLinkButtonProps extends NavLinkProps {
     className?: string;
 }
 
-const NavLinkButton: FC<NavLinkButtonProps> = ({ to, label, variant, className = '', ...props }) => {
+const NavLinkButton: FC<NavLinkButtonProps> = ({
+    to,
+    label,
+    variant,
+    className = '',
+    ...props
+}) => {
     const baseClasses = `
     rounded-md
     font-semibold
@@ -24,7 +30,7 @@ const NavLinkButton: FC<NavLinkButtonProps> = ({ to, label, variant, className =
     focus:outline-none
   `;
 
-  const variantClasses =
+    const variantClasses =
         variant === 'primary'
             ? 'bg-orange-500 text-white hover:bg-orange-700'
             : 'bg-gray-200 text-gray-800 hover:bg-gray-300';

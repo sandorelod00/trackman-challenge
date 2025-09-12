@@ -1,9 +1,8 @@
-import type { FC } from "react";
+import type { FC } from 'react';
 
-import IconButton from "../../core/Button/IconButton";
-import Dialog from "../../core/dialog/Dialog";
-import Button from "../../core/Button/Button";
-
+import IconButton from '../../core/Button/IconButton';
+import Dialog from '../../core/dialog/Dialog';
+import Button from '../../core/Button/Button';
 
 interface DeleteFacilityDialogProps {
     facilityName: string;

@@ -3,7 +3,7 @@ import { type FC, type InputHTMLAttributes } from 'react';
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label: string;
     required?: boolean;
-    error?: string
+    error?: string;
     className?: string;
 }
 
@@ -26,7 +26,7 @@ const Input: FC<InputProps> = ({ label, required = true, error, className = '', 
           m-0
         `}
             />
-        {error && <span className="text-red-500 text-sm">{error}</span>}
+            {error && <span className="text-red-500 text-sm">{error}</span>}
         </div>
     );
 };
