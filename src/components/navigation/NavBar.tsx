@@ -11,7 +11,6 @@ const navigationLinks: NavigationLinks[] = [
     { to: '/locations', label: 'Locations' },
     { to: '/players', label: 'Players' },
     { to: '/accessManagement', label: 'Access Management' },
-    { to: '/create', label: 'Create' },
 ];
 
 const NavBar = () => {
