@@ -3,12 +3,13 @@ import { type FC, type TextareaHTMLAttributes } from 'react';
 interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     label: string;
     required?: boolean;
+    error?: string;
     className?: string;
 }
 
-const TextArea: FC<TextareaProps> = ({ label, required = false, className = '', ...props }) => {
+const TextArea: FC<TextareaProps> = ({ label, required = true, error, className = '', ...props }) => {
     return (
-        <div className={`w-[384px] max-w-[384px] h-[121px] flex flex-col gap-2 ${className}`}>
+        <div className={`w-[384px] max-w-[384px] h-[121px] flex flex-col gap-2 ${className} mb-8`}>
             <label>
                 {label} {required && <span className="text-red-500">*</span>}
             </label>
@@ -28,6 +29,7 @@ const TextArea: FC<TextareaProps> = ({ label, required = false, className = '', 
           m-0
         `}
             />
+        {error && <span className="text-red-500 text-sm">{error}</span>}
         </div>
     );
 };
