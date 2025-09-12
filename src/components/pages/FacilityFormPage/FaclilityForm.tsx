@@ -1,21 +1,26 @@
-import { type FC } from "react"
+import { useEffect, type FC } from "react"
 import { useForm, type SubmitHandler } from "react-hook-form"
 import Button from "../../core/Button/Button"
 import Checkbox from "../../core/Checkbox/Checkbox"
 import Input from "../../core/Input/Input"
 import TextArea from "../../core/TextArea/TextArea"
 import type { Facility } from "../../../types/Facility"
+import { useFacilityContext } from "../../../context/FacilityContext"
+import { useNavigate } from "react-router-dom"
+import NavLinkButton from "../../core/Navigation/NavLinkButton"
 
 interface FacilityFormProps {
-    initialFacility?: FacilityFormInputs
+    initialFacility?: FacilityFormInputs,
+    isEditMode: boolean
 }
 
-type FacilityFormInputs = Omit<Facility, "id" | "isOpen">
+type FacilityFormInputs = Facility
 
-const FacilityForm: FC<FacilityFormProps> = ({ initialFacility }) => {
+const FacilityForm: FC<FacilityFormProps> = ({ initialFacility, isEditMode }) => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm<FacilityFormInputs>({
         defaultValues: initialFacility ?? {
@@ -29,8 +34,18 @@ const FacilityForm: FC<FacilityFormProps> = ({ initialFacility }) => {
         },
     })
 
+    useEffect(() => {
+        if (initialFacility) {
+            reset(initialFacility);
+        }
+    }, [initialFacility, reset]);
+
+    const { addFacility } = useFacilityContext()
+    const navigate = useNavigate()
+
     const onSubmit: SubmitHandler<FacilityFormInputs> = (data: FacilityFormInputs) => {
-        console.log("Submitted:", data)
+        addFacility(data)
+        navigate("/")
     }
 
     return (
@@ -90,8 +105,8 @@ const FacilityForm: FC<FacilityFormProps> = ({ initialFacility }) => {
             </div>
 
             <div className="flex justify-end gap-2 mt-4">
-                <Button label="Cancel" variant="secondary" type="button" />
-                <Button label="Create Facility" variant="primary" type="submit" />
+                <NavLinkButton label="Cancel" variant="secondary" type="button" to={"/"} />
+                <Button label={isEditMode ? "Create Facility" : "Update Facility"} variant="primary" type="submit" />
             </div>
         </form>
     )

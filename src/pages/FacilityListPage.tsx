@@ -3,34 +3,11 @@ import NavLinkButton from "../components/core/Navigation/NavLinkButton";
 import DeleteFacilityDialog from "../components/pages/FacilityListPage/DeleteFacilityDialog";
 import FacilityCard from "../components/pages/FacilityListPage/FacilityCard/FacilityCard";
 import type { Facility } from "../types/Facility";
-
-
-const mockFacilityData: Facility = {
-    id: '1',
-    name: 'Mock Facility',
-    address: '123 Mock St, Mock City',
-    isOpen: true,
-    description: 'This is a mock facility used for demonstration purposes.',
-    defaultFacility: false,
-    imageUrl: '/mock.jpg',
-    openingHours: '08:00 AM',
-    closingHours: '10:00 PM',
-};
-
-const mockFacilityDataList: Facility[] = [
-    mockFacilityData,
-    { ...mockFacilityData, id: '2', name: 'Mock Facility 2', isOpen: false },
-    { ...mockFacilityData, id: '3', name: 'Mock Facility 3', isOpen: true },
-    { ...mockFacilityData, id: '4', name: 'Mock Facility 4', isOpen: false },
-    { ...mockFacilityData, id: '5', name: 'Mock Facility 5', isOpen: true },
-    { ...mockFacilityData, id: '6', name: 'Mock Facility 6', isOpen: true },
-    { ...mockFacilityData, id: '7', name: 'Mock Facility 7', isOpen: false },
-    { ...mockFacilityData, id: '8', name: 'Mock Facility 8', isOpen: true },
-    { ...mockFacilityData, id: '9', name: 'Mock Facility 9', isOpen: false },
-];
+import { useFacilityContext } from "../context/FacilityContext";
 
 const FacilityListPage = () => {
-    const [facilities, setFacilities] = useState<Facility[]>(mockFacilityDataList);
+
+    const {facilities, deleteFacility} = useFacilityContext();
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [facilityToDelete, setFacilityToDelete] = useState<Facility | null>();
 
@@ -46,7 +23,7 @@ const FacilityListPage = () => {
 
     const confirmDelete = () => {
         if (facilityToDelete) {
-            setFacilities((prev) => prev.filter((f) => f.id !== facilityToDelete.id));
+            deleteFacility(facilityToDelete.id);
         }
         closeDialog();
     };
@@ -55,7 +32,7 @@ const FacilityListPage = () => {
         <>
             <div className="flex flex-col">
                 <div className="flex justify-end">
-                    <NavLinkButton to="/create" label="Create Facility" />
+                    <NavLinkButton to="/create" label="Create Facility" variant={"primary"} />
                 </div>
                 <div className="flex grid grid-cols-3 gap-4 mt-1">
                     {facilities.map((facility) => (

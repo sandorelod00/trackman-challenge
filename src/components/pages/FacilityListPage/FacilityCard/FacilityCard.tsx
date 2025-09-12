@@ -1,15 +1,15 @@
 import type { FC } from "react";
 import type { Facility } from "../../../../types/Facility";
-import Button from "../../../core/Button/Button";
 import IconButton from "../../../core/Button/IconButton";
 import IconDelete from "../../../core/Icons/IconDelete";
 import IconLocation from "../../../core/Icons/IconLocation";
 import IconStar from "../../../core/Icons/IconStar";
 import Label from "../../../core/Label/Label";
 import mockImage from '/mock.jpg';
+import NavLinkButton from "../../../core/Navigation/NavLinkButton";
 
 
-type FacilityCardProp = Omit<Facility, 'description' | 'id'>;
+type FacilityCardProp = Omit<Facility, 'description'>;
 
 interface CardProps {
     facility: FacilityCardProp;
@@ -39,9 +39,11 @@ const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }
         >
             <div className="relative w-full h-[160px] rounded-[12px] overflow-hidden">
                 <img src={mockImage} alt="Card image" className="w-full h-full object-cover" />
-                <div className="absolute top-[8px] left-[8px]">
-                    <IconStar className="bg-yellow-300 opacity-80 rounded-full" />
-                </div>
+                 {facility.defaultFacility && 
+                    <div className="absolute top-[8px] left-[8px]">
+                        <IconStar className="bg-yellow-300 opacity-80 rounded-full" />
+                    </div>
+                 }
             </div>
             <div className="flex flex-col gap-1">
                 <div className="flex justify-between items-center">
@@ -52,6 +54,8 @@ const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }
                         className="ml-2"
                     />
                 </div>
+                {facility.id}
+                {facility.defaultFacility}
                 <div className="flex items-center">
                     <div className="flex text-gray-500 items-center gap-1">
                         <IconLocation />
@@ -61,11 +65,10 @@ const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }
                         <IconButton className="bg-gray-200" onClick={onDeleteClick}>
                             <IconDelete />
                         </IconButton>
-                        <Button
+                        <NavLinkButton
                             label="Edit"
                             variant="secondary"
-                            onClick={() => alert('Button Clicked!')}
-                            className="h-[32px"
+                            to={`/edit/${facility.id}`}
                         />
                     </div>
                 </div>
