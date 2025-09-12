@@ -16,7 +16,7 @@ const TextArea: FC<TextareaProps> = ({
 }) => {
     return (
         <div className={`w-[384px] max-w-[384px] h-[121px] flex flex-col gap-2 ${className} mb-8`}>
-            <label>
+            <label className='text-sm'>
                 {label} {required && <span className="text-red-500">*</span>}
             </label>
             <textarea

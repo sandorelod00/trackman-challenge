@@ -50,7 +50,7 @@ const FacilityForm: FC<FacilityFormProps> = ({ initialFacility, isEditMode }) =>
 
     return (
         <form className="bg-white shadow[#0C0C0D0D] py-4 px-6" onSubmit={handleSubmit(onSubmit)}>
-            <h2>Facility Information</h2>
+            <h4>Facility Information</h4>
 
             <Input
                 type="text"
@@ -87,11 +87,12 @@ const FacilityForm: FC<FacilityFormProps> = ({ initialFacility, isEditMode }) =>
                 {...register('defaultFacility')}
             />
 
-            <h2>Working Hours</h2>
+            <h4>Working Hours</h4>
             <div className="flex gap-4">
                 <Input
                     type="time"
                     label="Opening Time"
+                    className="w-[187px]"
                     {...register('openingHours', { required: 'Opening time is required' })}
                     error={errors.openingHours?.message}
                 />
@@ -99,6 +100,7 @@ const FacilityForm: FC<FacilityFormProps> = ({ initialFacility, isEditMode }) =>
                 <Input
                     type="time"
                     label="Closing Time"
+                    className="w-[187px]"
                     {...register('closingHours', { required: 'Closing time is required' })}
                     error={errors.closingHours?.message}
                 />

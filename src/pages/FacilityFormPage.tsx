@@ -21,7 +21,7 @@ const FacilityFormPage = () => {
 
     return (
         <div className="flex flex-col">
-            {!isEditMode ? <h1>Create a New Facility</h1> : <h1>Edit Facility</h1>}
+            <h2>{!isEditMode ? "Create a New Facility" : "Edit Facility"}</h2>
             <FacilityForm initialFacility={facility} isEditMode={isEditMode} />
         </div>
     );

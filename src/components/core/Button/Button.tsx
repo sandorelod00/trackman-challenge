@@ -18,6 +18,7 @@ const Button: FC<ButtonProps> = ({ label, variant = "primary", className = "", .
     transition
     duration-200
     focus:outline-none
+    hover:cursor-pointer
     px-4 
   `
 

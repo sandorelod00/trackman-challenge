@@ -9,14 +9,13 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const Input: FC<InputProps> = ({ label, required = true, error, className = '', ...props }) => {
     return (
-        <div className={`w-[384px] h-[50px] flex flex-col ${className} mb-8`}>
-            <label>
+        <div className={`max-w-[384px] h-[50px] flex flex-col ${className} mb-8`}>
+            <label className='text-sm'>
                 {label} {required && <span>*</span>}
             </label>
             <input
                 {...props}
                 className={`
-          w-[384px]
           h-[32px]
           p-2
           rounded
