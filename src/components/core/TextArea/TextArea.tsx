@@ -15,14 +15,14 @@ const TextArea: FC<TextareaProps> = ({
     ...props
 }) => {
     return (
-        <div className={`max-w-[384px] h-[121px] flex flex-col gap-2 ${className} mb-6`}>
+        <div className={`max-w-md h-32 flex flex-col gap-2 ${className} mb-6`}>
             <label className='text-sm'>
                 {label} {required && <span>*</span>}
             </label>
             <textarea
                 {...props}
                 className={`
-          h-[103px]
+          h-24
           px-2
           py-2
           rounded

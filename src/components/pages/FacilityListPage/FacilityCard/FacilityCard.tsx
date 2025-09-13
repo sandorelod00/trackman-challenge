@@ -24,10 +24,9 @@ const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }
     return (
         <div
             className={`
-                w-[381px]
-                min-w-[348px]
-                h-[272.727px]
-                rounded-[16px]
+                max-w-96
+                h-72
+                rounded-xl
                 px-4
                 py-2
                 flex
@@ -40,10 +39,10 @@ const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }
                 ${className}
             `}
         >
-            <div className="relative w-full aspect-[324/176] rounded-[12px] overflow-hidden">
+            <div className="relative w-full aspect-[324/176] rounded-xl overflow-hidden">
                 <img src={mockImage} alt="Card image" className="w-full h-full object-cover" />
                 {facility.defaultFacility && (
-                    <div className="absolute top-[8px] left-[8px]">
+                    <div className="absolute top-2 left-2">
                         <IconStar
                             className="bg-[#975102] bg-opacity-50 rounded-full p-1"
                             color="#FFFFFF"
@@ -61,7 +60,7 @@ const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }
                     />
                 </div>
                 <div className="flex items-center">
-                    <div className="flex text-gray-500 items-center truncate max-w-[220px]">
+                    <div className="flex text-gray-500 items-center truncate max-w-sm">
                         <IconLocation />
                         <p className='truncate'>{facility.address}</p>
                     </div>

@@ -10,7 +10,10 @@ const Checkbox: FC<CheckboxProps> = ({ label, description, className = '', ...pr
     return (
         <label
             className={`
-        min-w-[127px] h-[58px] flex gap-2
+        min-w-32
+        h-14
+        flex
+        gap-2
         p-2
         cursor-pointer
         mb-6

@@ -8,7 +8,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button: FC<ButtonProps> = ({ label, variant = "primary", className = "", ...props }) => {
     const baseClasses = `
-    h-[32px]
+    h-8
     rounded-md
     flex
     items-center

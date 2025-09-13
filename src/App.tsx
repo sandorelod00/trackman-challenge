@@ -6,7 +6,7 @@ function App() {
     return (
         <FacilitiesContextProvider>
             <NavBar />
-            <main className="w-full max-w-[1200px] mx-auto px-4">
+            <main className="w-full max-w-screen-xl mx-auto px-4">
                 <Outlet />
             </main>
         </FacilitiesContextProvider>

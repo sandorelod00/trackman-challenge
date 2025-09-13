@@ -92,7 +92,7 @@ const FacilityForm: FC<FacilityFormProps> = ({ initialFacility, isEditMode }) =>
                 <Input
                     type="time"
                     label="Opening Time"
-                    className="w-[187px]"
+                    className="w-48"
                     {...register('openingHours', { required: 'Opening time is required' })}
                     error={errors.openingHours?.message}
                 />
@@ -100,7 +100,7 @@ const FacilityForm: FC<FacilityFormProps> = ({ initialFacility, isEditMode }) =>
                 <Input
                     type="time"
                     label="Closing Time"
-                    className="w-[187px]"
+                    className="w-48"
                     {...register('closingHours', { required: 'Closing time is required' })}
                     error={errors.closingHours?.message}
                 />

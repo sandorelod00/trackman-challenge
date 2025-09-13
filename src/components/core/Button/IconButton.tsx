@@ -10,8 +10,8 @@ const IconButton: FC<IconButtonProps> = ({ children, className = '', ...props })
         <button
             {...props}
             className={`
-                w-[32px]
-                h-[32px]
+                w-8
+                h-8
                 rounded-md
                 flex
                 items-center

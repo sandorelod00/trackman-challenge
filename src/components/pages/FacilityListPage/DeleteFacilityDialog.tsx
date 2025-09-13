@@ -22,7 +22,7 @@ const DeleteFacilityDialog: FC<DeleteFacilityDialogProps> = ({
             isOpen={isOpen}
             onClose={closeDialog}
             title="Delete Facility"
-            className="w-[400px] rounded-md"
+            className="w-96 rounded-md"
         >
             <div className="">
                 <div className="flex justify-between items-center p-2">

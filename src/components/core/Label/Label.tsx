@@ -20,7 +20,7 @@ const Label: FC<LabelProps> = ({ text, type = 'success', className = '', ...prop
                 flex
                 items-center
                 justify-center
-                gap-[10px]
+                gap-2
                 opacity-100
                 text-sm
                 font-medium

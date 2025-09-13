@@ -13,7 +13,7 @@ const MenuItem: FC<MenuItemProps> = ({ to, label, className = "" }) => {
             to={to}
             className={({ isActive }) =>
                 [
-                    "h-[38px] flex items-center px-2 py-4 rounded transition-colors duration-200",
+                    "h-10 flex items-center px-2 py-4 rounded transition-colors duration-200",
                     "hover:bg-primary hover:text-[#F3F3F3]",
                     isActive
                         ? "text-[#F3F3F3]"
