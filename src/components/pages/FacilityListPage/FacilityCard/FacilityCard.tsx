@@ -9,7 +9,7 @@ import mockImage from '/mock.jpg';
 import NavLinkButton from '../../../core/Navigation/NavLinkButton';
 import { calculateIsOpen } from '../../../../utlis/timeUtils';
 
-type FacilityCardProp = Omit<Facility, 'description'>;
+type FacilityCardProp = Facility;
 
 interface CardProps {
     facility: FacilityCardProp;
@@ -24,7 +24,7 @@ const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }
         <div
             className={`
                 max-w-96
-                h-72
+                h-96
                 rounded-xl
                 px-4
                 py-2
@@ -58,6 +58,9 @@ const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }
                         type={isOpen ? 'success' : 'error'}
                         className="ml-2"
                     />
+                </div>
+                <div className="my-2 text-gray-600 text-sm h-14 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+                    {facility.description}
                 </div>
                 <div className="flex items-center">
                     <div className="flex text-gray-500 items-center truncate max-w-sm">
