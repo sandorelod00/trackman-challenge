@@ -35,4 +35,8 @@
   h6 {
     @apply text-sm font-medium;
   }
+
+  dialog::backdrop {
+    @apply bg-black/70;
+  }
 }
