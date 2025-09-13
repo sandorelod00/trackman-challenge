@@ -13,6 +13,7 @@ const Checkbox: FC<CheckboxProps> = ({ label, description, className = '', ...pr
         min-w-[127px] h-[58px] flex gap-2
         p-2
         cursor-pointer
+        mb-6
         ${className}
       `}
         >
@@ -26,7 +27,6 @@ const Checkbox: FC<CheckboxProps> = ({ label, description, className = '', ...pr
                         border border-gray-400
                         accent-primary
                         "
-                    // TODO: Using the accent color with Tailwind doesn't work correctly because the checkmark can't be styled as expected. Using plain CSS works as a workaround.
                 />
             </div>
             <div className="flex flex-col leading-tight">

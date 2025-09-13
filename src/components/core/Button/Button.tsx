@@ -10,7 +10,6 @@ const Button: FC<ButtonProps> = ({ label, variant = "primary", className = "", .
     const baseClasses = `
     h-[32px]
     rounded-md
-    font-semibold
     flex
     items-center
     justify-center
