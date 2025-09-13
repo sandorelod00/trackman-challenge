@@ -7,7 +7,7 @@ import IconStar from '../../../core/Icons/IconStar';
 import Label from '../../../core/Label/Label';
 import mockImage from '/mock.jpg';
 import NavLinkButton from '../../../core/Navigation/NavLinkButton';
-import { calculateIsOpen } from '../../../../utlis/calculateIsOpen';
+import { calculateIsOpen } from '../../../../utlis/timeUtils';
 
 type FacilityCardProp = Omit<Facility, 'description'>;
 

@@ -19,3 +19,17 @@ export const calculateIsOpen = (openingHours: string, closingHours: string): boo
 
     return now >= openTime && now <= closeTime;
 };
+
+
+export const isValidTime = (value: string) => {
+    const timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/;
+    return timeRegex.test(value);
+};
+
+export const isOpeningBeforeClosing = (opening: string, closing: string) => {
+    if (!isValidTime(opening) || !isValidTime(closing)) return true;
+    const [openH, openM] = opening.split(':').map(Number);
+    const [closeH, closeM] = closing.split(':').map(Number);
+
+    return openH < closeH || (openH === closeH && openM < closeM);
+};
