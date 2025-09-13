@@ -30,7 +30,7 @@ const FacilityListPage = () => {
     return (
         <>
             <div className="flex flex-col">
-                <div className="flex justify-end">
+                <div className="flex justify-end mb-2">
                     <NavLinkButton to="/create" label="Create Facility" variant={'primary'} />
                 </div>
                 <div className="flex grid grid-cols-3 mt-1">
