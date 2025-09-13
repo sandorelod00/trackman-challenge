@@ -44,7 +44,7 @@ const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }
                 {facility.defaultFacility && (
                     <div className="absolute top-2 left-2">
                         <IconStar
-                            className="bg-[#975102] bg-opacity-50 rounded-full p-1"
+                            className="bg-brown bg-opacity-50 rounded-full p-1"
                             color="#FFFFFF"
                         />
                     </div>

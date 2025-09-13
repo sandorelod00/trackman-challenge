@@ -27,11 +27,11 @@ const DeleteFacilityDialog: FC<DeleteFacilityDialogProps> = ({
             <div className="">
                 <div className="flex justify-between items-center p-2">
                     <p>Delete Facility</p>
-                    <IconButton className="bg-[#F5F5F5]" onClick={closeDialog}>
+                    <IconButton className="bg-gray-100" onClick={closeDialog}>
                         X
                     </IconButton>
                 </div>
-                <div className="border-y-1 border-[#D9D9D9]">
+                <div className="border-y-1 border-gray-300">
                     <div className="p-2">
                         <p>
                             Are you sure you want to delete this facility? This action cannot be

@@ -19,7 +19,7 @@ const Input: FC<InputProps> = ({ label, required = true, error, className = '', 
           h-8
           p-2
           rounded
-          border border-[#B3B3B3]
+          border border-gray-400
           bg-white
           focus:outline-none
           m-0

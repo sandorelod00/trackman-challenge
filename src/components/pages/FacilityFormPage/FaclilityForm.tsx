@@ -49,7 +49,7 @@ const FacilityForm: FC<FacilityFormProps> = ({ initialFacility, isEditMode }) =>
     };
 
     return (
-        <form className="bg-white shadow[#0C0C0D0D] py-4 px-6" onSubmit={handleSubmit(onSubmit)}>
+        <form className="bg-white shadow-custom py-4 px-6" onSubmit={handleSubmit(onSubmit)}>
             <h4>Facility Information</h4>
 
             <Input

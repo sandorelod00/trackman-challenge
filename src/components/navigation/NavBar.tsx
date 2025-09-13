@@ -15,7 +15,7 @@ const navigationLinks: NavigationLinks[] = [
 
 const NavBar = () => {
     return (
-        <nav className="w-full bg-[#2C2C2C] h-16 mb-6">
+        <nav className="w-full bg-gray-900 h-16 mb-6">
             <div className="max-w-screen-xl mx-auto h-full flex items-center gap-6 px-4">
                 <img src={Logo} className="h-4 w-36"></img>
                 {navigationLinks.map((link, index) => (
