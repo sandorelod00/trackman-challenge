@@ -64,7 +64,7 @@ const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }
                         <IconLocation />
                         <p className='truncate'>{facility.address}</p>
                     </div>
-                    <div className="flex ml-auto gap-2 items-center">
+                    <div className="flex ml-auto gap-1 items-center">
                         <IconButton className="bg-gray-200" onClick={onDeleteClick}>
                             <IconDelete size={16}/>
                         </IconButton>

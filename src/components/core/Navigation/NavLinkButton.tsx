@@ -17,6 +17,7 @@ const NavLinkButton: FC<NavLinkButtonProps> = ({
 }) => {
     const baseClasses = `
     h-8
+    min-w-18
     rounded-md
     font-semibold
     flex

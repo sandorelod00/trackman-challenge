@@ -33,7 +33,7 @@ const FacilityListPage = () => {
                 <div className="flex justify-end">
                     <NavLinkButton to="/create" label="Create Facility" variant={'primary'} />
                 </div>
-                <div className="flex grid grid-cols-3 gap-4 mt-1">
+                <div className="flex grid grid-cols-3 mt-1">
                     {facilities.map((facility) => (
                         <FacilityCard
                             key={facility.id}
