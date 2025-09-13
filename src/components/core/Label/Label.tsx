@@ -7,8 +7,7 @@ interface LabelProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Label: FC<LabelProps> = ({ text, type = 'success', className = '', ...props }) => {
-    const typeClasses =
-        type === 'success' ? 'bg-green-light text-green' : 'bg-red-light text-red';
+    const typeClasses = type === 'success' ? 'bg-green-light text-green' : 'bg-red-light text-red';
 
     return (
         <div

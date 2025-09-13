@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import IconButton from '../../core/Button/IconButton';
 import Dialog from '../../core/dialog/Dialog';
 import Button from '../../core/Button/Button';
+import IconClose from '../../core/Icons/IconClose';
 
 interface DeleteFacilityDialogProps {
     facilityName: string;
@@ -28,7 +29,7 @@ const DeleteFacilityDialog: FC<DeleteFacilityDialogProps> = ({
                 <div className="flex justify-between items-center p-2">
                     <p>Delete Facility</p>
                     <IconButton className="bg-gray-100" onClick={closeDialog}>
-                        X
+                        <IconClose size={16} />
                     </IconButton>
                 </div>
                 <div className="border-y-1 border-gray-300">

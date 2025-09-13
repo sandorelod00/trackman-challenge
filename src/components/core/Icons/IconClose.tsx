@@ -1,6 +1,6 @@
 type IconlyIconProps = {
-    size?: number
-}
+    size?: number;
+};
 
 const IconClose = ({ size = 32 }: IconlyIconProps) => {
     return (
@@ -19,7 +19,7 @@ const IconClose = ({ size = 32 }: IconlyIconProps) => {
                 stroke-linejoin="round"
             />
         </svg>
-    )
-}
+    );
+};
 
-export default IconClose
+export default IconClose;

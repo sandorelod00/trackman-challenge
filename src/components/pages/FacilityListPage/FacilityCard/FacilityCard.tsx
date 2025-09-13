@@ -18,7 +18,6 @@ interface CardProps {
 }
 
 const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }) => {
-
     const isOpen = calculateIsOpen(facility.openingHours, facility.closingHours);
 
     return (
@@ -62,11 +61,11 @@ const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }
                 <div className="flex items-center">
                     <div className="flex text-gray-500 items-center truncate max-w-sm">
                         <IconLocation />
-                        <p className='truncate'>{facility.address}</p>
+                        <p className="truncate">{facility.address}</p>
                     </div>
                     <div className="flex ml-auto gap-1 items-center">
                         <IconButton className="bg-gray-200" onClick={onDeleteClick}>
-                            <IconDelete size={16}/>
+                            <IconDelete size={16} />
                         </IconButton>
                         <NavLinkButton
                             label="Edit"
