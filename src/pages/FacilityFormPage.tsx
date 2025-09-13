@@ -1,4 +1,4 @@
-import FacilityForm from '../components/pages/FacilityFormPage/FaclilityForm';
+import FacilityForm from '../components/pages/FacilityFormPage/FacilityForm';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import type { Facility } from '../types/Facility';
