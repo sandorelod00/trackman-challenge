@@ -18,7 +18,7 @@ interface FacilityFormProps {
 type FacilityFormInputs = Facility;
 
 const FacilityForm: FC<FacilityFormProps> = ({ initialFacility, isEditMode }) => {
-    const { addFacility, facilities } = useFacilityContext();
+    const { addFacility, updateFacility, facilities } = useFacilityContext();
     const isDefaultFacility = facilities.length === 0;
     const navigate = useNavigate();
 
@@ -57,7 +57,11 @@ const FacilityForm: FC<FacilityFormProps> = ({ initialFacility, isEditMode }) =>
         } else {
             clearErrors('openingHours');
         }
-        addFacility(data);
+        if(!isEditMode){
+            addFacility(data);
+        }else{
+            updateFacility(data);
+        }
         navigate('/');
     };
 
@@ -90,6 +94,10 @@ const FacilityForm: FC<FacilityFormProps> = ({ initialFacility, isEditMode }) =>
                 label="Cover Image URL"
                 {...register('imageUrl', {
                     required: 'Image URL is required',
+                    pattern: {
+                        value: /^https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp)$/i,
+                        message: 'Please enter a valid image URL. (jpg, png, gif, webp)',
+                      },
                 })}
                 error={errors.imageUrl?.message}
             />
