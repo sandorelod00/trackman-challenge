@@ -24,7 +24,7 @@ const FacilityCard: FC<CardProps> = ({ facility, onDeleteClick, className = '' }
         <div
             className={`
                 max-w-96
-                h-96
+                h-80
                 rounded-xl
                 px-4
                 py-2
