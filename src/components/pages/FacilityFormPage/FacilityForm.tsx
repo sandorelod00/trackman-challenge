@@ -18,6 +18,11 @@ interface FacilityFormProps {
 type FacilityFormInputs = Facility
 
 const FacilityForm: FC<FacilityFormProps> = ({ initialFacility, isEditMode }) => {
+
+    const { addFacility, facilities } = useFacilityContext()
+    const isDefaultFacility = facilities.length === 0
+    const navigate = useNavigate()
+
     const {
         register,
         handleSubmit,
@@ -31,7 +36,7 @@ const FacilityForm: FC<FacilityFormProps> = ({ initialFacility, isEditMode }) =>
             address: "",
             description: "",
             imageUrl: "",
-            defaultFacility: false,
+            defaultFacility: isDefaultFacility,
             openingHours: "",
             closingHours: "",
         },
@@ -43,8 +48,6 @@ const FacilityForm: FC<FacilityFormProps> = ({ initialFacility, isEditMode }) =>
         }
     }, [initialFacility, reset])
 
-    const { addFacility } = useFacilityContext()
-    const navigate = useNavigate()
 
     const onSubmit: SubmitHandler<FacilityFormInputs> = (data: FacilityFormInputs) => {
         if (isOpeningBeforeClosing(data.openingHours, data.closingHours) === false) {
@@ -96,6 +99,7 @@ const FacilityForm: FC<FacilityFormProps> = ({ initialFacility, isEditMode }) =>
             <Checkbox
                 label="Default Facility"
                 description="Setting this facility as default will override the currently marked default facility."
+                disabled={isDefaultFacility}
                 {...register("defaultFacility")}
             />
 
