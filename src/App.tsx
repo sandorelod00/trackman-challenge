@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import NavBar from './components/navigation/NavBar';
-import { FacilitiesContextProvider } from './context/FacilityContext';
+import { FacilitiesContextProvider } from './context/FacilityContextProvider';
 
 function App() {
     return (
